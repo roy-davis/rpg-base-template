@@ -1,0 +1,15 @@
+
+.auth-panel {
+    background-color: var(--blue-dark);
+    border-radius: var(--border-radius);
+    padding: 1rem;
+    margin: 3rem auto 1rem auto;
+    width: 16rem; 
+}
+
+.auth-note {
+    font-size: 0.75rem;
+    color: var(--menu-header-highlight);
+    text-align: center;
+    line-height: 1rem;
+}

@@ -1,0 +1,58 @@
+
+:root {    
+    /* Brand Colours */
+    --lic-licorice: #323849;
+    --lic-sky-blue: #0095D5;
+    --lic-dark-blue: #203A70;
+    --lic-light-sky: #cbdbef;
+    --lic-success: #18ccb8;
+    --lic-danger: #cb3a3a;
+    --lic-warning: #fbdd53;
+    --lic-light-grey: #9ca3b7;
+    --lic-blue-white: #edf3fa;
+    
+    /* Global Colours */
+    --green: #18ccb8;
+    --yellow: #fbdd53;
+    --orange: #E38C46;
+    --red: #cb3a3a;
+    --white: #FFFFFF;
+    --black: #000000;
+    --grey: #9ca3b7;   
+    --blue: #0095D5;
+    --blue-dark: #112E58;
+    
+    --menu-header-highlight: #5882B1;
+
+    
+    /* Component Utility settings */
+    --body-colour: #FFFDEF; 
+    --border-color: #CBDBEF;
+    --border-radius: 0.25rem;
+    --box-shadow: 0.125rem 0.125rem 0.5rem;
+    --highlight: #E7F3FF;
+
+    /* Fonts */
+    --text-colour: #000000;
+    --text-grey: #666666;
+    --text-family: 'LIC-Regular';
+}
+
+
+* {
+    position: relative;
+    box-sizing: border-box;
+}
+
+html, body, #root {
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
+    background-color:var(--grey); 
+    height: 100%;
+    font-family: var(--text-family);
+}
+
+@import './reset.css';
+@import './fonts.css';
+@import './layout.css';

@@ -1,0 +1,39 @@
+
+@font-face {
+	font-family: 'LIC-Thin';
+	src: url('#{$font-path}/ttf/booster-thin.ttf') format('truetype');
+	font-weight: 200;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'LIC-Light';
+	src: url('./fonts/ttf/booster-light.ttf') format('truetype');
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'LIC-Regular';
+	src: url('./fonts/woff/booster-regular.woff') format('woff'),
+	     url('./fonts/ttf/booster-regular.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'LIC-Medium';
+	src: url('./fonts/woff/booster-medium.woff') format('woff'),
+	     url('./fonts/ttf/booster-medium.ttf') format('truetype');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'LIC-Bold';
+	src: url('./fonts/woff/booster-bold.woff') format('woff'),
+	     url('./fonts/ttf/booster-bold.ttf') format('truetype');
+	font-weight: 700;
+	font-style: normal;
+}
+
