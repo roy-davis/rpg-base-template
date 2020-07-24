@@ -13,3 +13,16 @@
     text-align: center;
     line-height: 1rem;
 }
+
+.auth-logo {
+    width: 3.5rem;
+    height: 3.5rem;
+    float: left;
+    margin-right: 1rem;
+}
+
+.auth-panel h1 {
+    font-size: 1.3rem;
+    color: var(--white);
+    line-height: 1.85rem;
+}

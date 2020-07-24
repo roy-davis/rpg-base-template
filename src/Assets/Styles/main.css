@@ -29,8 +29,13 @@
     --body-colour: #FFFDEF; 
     --border-color: #CBDBEF;
     --border-radius: 0.25rem;
-    --box-shadow: 0.125rem 0.125rem 0.5rem;
+    --box-shadow: 0.125rem 0.125rem 0.5rem rgba(0,0,0,0.3);
     --highlight: #E7F3FF;
+
+    /* Buttons */
+    --btn-prompt: #0095D5;
+    --btn-prompt-text: #FFFFFF;
+    --btn-prompt-border: #000000;
 
     /* Fonts */
     --text-colour: #000000;

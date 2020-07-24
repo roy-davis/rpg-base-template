@@ -1,6 +1,8 @@
 import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import './oauth.css';
+import AppLogo from '../../Assets/Images/logo.svg';
+import { LoginButton } from '../Buttons';
 
 const OAuthLogin: React.FC = () => {
 
@@ -11,13 +13,11 @@ const OAuthLogin: React.FC = () => {
             <section className="auth-panel">
                 <div className="app-description">
                     <div>
-                        
+                        <img src={AppLogo} alt="Application Logo" className="auth-logo" />
                     </div>
                     <h1>Application</h1>
                     <h1>Name</h1>
-                    <a href="#" className="oauth_login" onClick={() => loginWithRedirect()}>
-                        <span>Login</span>
-                    </a>
+                    <LoginButton onClick={() => loginWithRedirect()}/>
                 </div>
             </section>
             <p className="auth-note">Please contact the Rapid Prototyping Group</p>
