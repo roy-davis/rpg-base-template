@@ -32,7 +32,6 @@ const OAuthLogout: React.FC = () => {
 
     return (
         <a href="#" className="oauth_login" onClick={() => logout()}>
-            <small>{user.name}</small>
             <p>Logout</p>
         </a>
     );
