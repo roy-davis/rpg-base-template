@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from 'react-router-dom';
+import './menudraweritem.css';
 
 interface MenuDrawerItemProps {
     title: string,
@@ -10,7 +12,10 @@ interface MenuDrawerItemProps {
 const MenuDrawerItem: React.FC<MenuDrawerItemProps> = (props) => {
     
     return (
-        <li><a href={props.path}>{props.title}</a></li>
+        <li className="menu-drawer-item">
+            <img src="" />
+            <Link to={props.path} >{props.title}</Link>
+        </li>
 	)
 }
 

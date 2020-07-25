@@ -5,9 +5,19 @@
     width: 840px;
 }
 
-.content.login {
+.content {
+  height: 100%;
+  background-color:var(--white);
+}
+ 
+.page {
+  height: 100%;
+  background-color:var(--white);
+  padding: 1rem;
+}
+
+.page.login {
     background-color: var(--lic-dark-blue);
-    height: 100%;
 }
 
 

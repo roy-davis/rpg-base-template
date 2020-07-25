@@ -8,7 +8,7 @@ const LandingPage: React.FC = () => {
     const { isAuthenticated, user } = useAuth0();
     
     return (
-        <div className="content">
+        <article className="page">
             {isAuthenticated &&
                 <>
                     <h1>You are logged in as: {user.name} </h1>
@@ -23,7 +23,7 @@ const LandingPage: React.FC = () => {
             <p><Link to="/protected-example" >Protected Route</Link></p>
             <p><Link to="/login" >OAuth Login Form</Link></p>
             
-        </div>
+        </article>
 	)
 }
 

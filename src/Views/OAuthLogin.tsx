@@ -5,10 +5,10 @@ import { OAuthLogin as OAuthLoginControl } from '../Components/OAuthControls';
 const OAuthLogin: React.FC = () => {
     
     return (
-        <div className="content login">
+        <article className="page login">
             <PrototypeBanner />
            <OAuthLoginControl />
-        </div>
+        </article>
 	)
 }
 

@@ -21,14 +21,14 @@ function Routes() {
         <AppBar />
         <main className="content">          
           <Switch>
-              <Route path={["/"]} component={Examples} exact />
-              <Route path={["/layout"]} component={LayoutTest} exact />
-              <Route path={["/login"]} component={OAuthLogin} exact />
-              <PrivateRoute path="/protected-example" component={ProtectedExample} />
-            </Switch>
+            <Route path={["/"]} component={Examples} exact />
+            <Route path={["/layout"]} component={LayoutTest} exact />
+            <Route path={["/login"]} component={OAuthLogin} exact />
+            <PrivateRoute path="/protected-example" component={ProtectedExample} />
+          </Switch>
         </main>
         <MenuDrawer>
-          <MenuDrawerItem path="/" title="Menu item 1" icon="" />
+          <MenuDrawerItem path="/" title="Home" icon="" />
           <MenuDrawerItem path="/" title="Menu item 2" icon="" />
           <MenuDrawerItem path="/" title="Menu item 3" icon="" />
         </MenuDrawer>
