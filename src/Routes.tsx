@@ -1,6 +1,12 @@
 import React from 'react';
 import {Switch, Route} from 'react-router-dom';
+
+// Components
 import PrivateRoute from './Components/PrivateRoute';
+import AppBar from './Components/AppBar';
+import MenuDrawer from './Components/MenuDrawer';
+import MenuDrawerItem from './Components/MenuDrawerItem';
+
 
 // Views :
 import LayoutTest from "./Views/LayoutTest";
@@ -12,9 +18,8 @@ import Examples from "./Views/Examples";
 function Routes() {
   return (
     <div className="wrap">
-      
-      <div className="content">
-        <main className="main">          
+        <AppBar />
+        <main className="content">          
           <Switch>
               <Route path={["/"]} component={Examples} exact />
               <Route path={["/layout"]} component={LayoutTest} exact />
@@ -22,7 +27,11 @@ function Routes() {
               <PrivateRoute path="/protected-example" component={ProtectedExample} />
             </Switch>
         </main>
-      </div>
+        <MenuDrawer>
+          <MenuDrawerItem path="/" title="Menu item 1" icon="" />
+          <MenuDrawerItem path="/" title="Menu item 2" icon="" />
+          <MenuDrawerItem path="/" title="Menu item 3" icon="" />
+        </MenuDrawer>
     </div>
   );
 }

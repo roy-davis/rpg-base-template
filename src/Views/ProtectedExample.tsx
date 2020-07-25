@@ -4,7 +4,7 @@ const ProtectedExample: React.FC = () => {
     
     return (
         <section>
-           <h1>You need ot be authenticated to see this page</h1>
+           <h1>If you can read this you are authenticated.</h1>
         </section>
 	)
 }

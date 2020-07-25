@@ -28,7 +28,7 @@ const OAuthLogin: React.FC = () => {
 
 const OAuthLogout: React.FC = () => {
 
-    const { logout, user } = useAuth0();
+    const { logout } = useAuth0();
 
     return (
         <a href="#" className="oauth_login" onClick={() => logout()}>
