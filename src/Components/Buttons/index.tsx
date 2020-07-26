@@ -11,8 +11,17 @@ interface LoginButtonProps {
 const LoginButton: React.FC<LoginButtonProps> = (props) => {
 
     return (
-        <button className="btn login" onClick={props.onClick} >
-            <img src={LoginIcon} alt="Login icon" className="login icon" />
+        <button 
+            onClick={props.onClick} 
+            className="btn login" 
+            role="button"
+            aria-label="Login"
+        >
+            <img 
+                src={LoginIcon} 
+                alt="Login icon" 
+                className="login icon" 
+            />
             <span>Login</span>
         </button>
     );
