@@ -1,10 +1,25 @@
 import React from "react";
+import './icons.css';
+import SpriteSheet from "./sprite-sheet.svg";
 
-const SvgSprite: React.FC = () => {
+interface SvgSpriteProps {
+    icon: string,
+    fill?: string,
+    width?: number,
+    height?: number,
+};
+
+const SvgSprite: React.FC<SvgSpriteProps> = (props) => {
     
     return (
-        <div className="SvgSprite">
-        </div>
+        <svg 
+            fill={props.fill}
+            width={props.width}
+            height={props.height}
+            viewBox="0 0 100 100" 
+            className={`icon icon-${props.icon}`}>
+            <use xlinkHref={`${SpriteSheet}#${props.icon}`}></use>
+        </svg>
 	)
 }
 

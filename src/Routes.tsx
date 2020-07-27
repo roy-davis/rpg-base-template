@@ -14,7 +14,6 @@ import ProtectedExample from "./Views/ProtectedExample";
 import OAuthLogin from "./Views/OAuthLogin";
 import Examples from "./Views/Examples";
 
-
 function Routes() {
   return (
     <div className="wrap">
@@ -32,6 +31,7 @@ function Routes() {
           <MenuDrawerItem path="/" title="Menu item 2" icon="" />
           <MenuDrawerItem path="/" title="Menu item 3" icon="" />
         </MenuDrawer>
+
     </div>
   );
 }

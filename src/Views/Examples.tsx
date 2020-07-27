@@ -22,7 +22,7 @@ const LandingPage: React.FC = () => {
             <p><Link to="/layout" >Layout Example</Link></p>
             <p><Link to="/protected-example" >Protected Route</Link></p>
             <p><Link to="/login" >OAuth Login Form</Link></p>
-            
+
         </article>
 	)
 }
