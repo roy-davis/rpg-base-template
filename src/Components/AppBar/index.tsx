@@ -5,20 +5,30 @@ import './appbar.css';
 
 interface AppBarProps {
     title: string,
+    prototype?: boolean,
 };
 
 const AppBar: React.FC<AppBarProps> = (props) => {
     
-    return (
-        <aside className="appbar">
-            <button 
-                className="hamburger" 
-                aria-label="Open menu button.">
-                    <SvgSprite icon="menu" width={18} />
-            </button>
-            <h1>{props.title}</h1>
-        </aside>
-	)
+    if (props.prototype) {
+        return (
+            <aside className="appbar prototype">
+                <h1><SvgSprite icon="warning" width={18} fill="var(--black)" />This application is a prototype</h1>
+            </aside>
+        )
+    } else {
+        return (
+            <aside className="appbar">
+                <button 
+                    className="hamburger" 
+                    aria-label="Open menu button.">
+                        <SvgSprite icon="menu" width={18} />
+                </button>
+                <h1>{props.title}</h1>
+            </aside>
+        )
+    }
+
 }
 
 
