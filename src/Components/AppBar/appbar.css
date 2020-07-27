@@ -14,6 +14,15 @@
     border: none;
     color: var(--white);
     outline: none;
+    display: none;
+}
+
+.hamburger:hover {
+    background-color: var(--lic-sky-blue);
+}
+
+.hamburger:active {
+    background-color: var(--black);
 }
 
 .appbar h1 {
@@ -21,3 +30,9 @@
     color: var(--white);
     padding-left: 1rem;
 }
+
+
+@media screen and (min-width: 320px) and (max-width: 1000px) {
+
+    .hamburger { display: inline-block;}
+  }

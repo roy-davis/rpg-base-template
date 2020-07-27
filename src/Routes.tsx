@@ -18,8 +18,8 @@ import Examples from "./Views/Examples";
 function Routes() {
   return (
     <div className="wrap">
-        <AppBar />
-        <main className="content">          
+        <main className="content">  
+        <AppBar />        
           <Switch>
             <Route path={["/"]} component={Examples} exact />
             <Route path={["/layout"]} component={LayoutTest} exact />
