@@ -12,7 +12,9 @@ const PrivateRoute = (props: PrivateRouteProps) => {
  
     const { component: Component, children, ...rest } = props;
 
-    const { isAuthenticated, loginWithRedirect } = useAuth0();
+    const { isAuthenticated, 
+    //    loginWithRedirect 
+    } = useAuth0();
 
     return (
         <Route

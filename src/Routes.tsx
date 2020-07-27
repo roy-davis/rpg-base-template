@@ -17,7 +17,7 @@ import Examples from "./Views/Examples";
 function Routes() {
   return (
     <div className="wrap">
-        <AppBar />
+        <AppBar title="This is a placeholder title." />
         <main className="content">          
           <Switch>
             <Route path={["/"]} component={Examples} exact />

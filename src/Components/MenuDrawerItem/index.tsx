@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from 'react-router-dom';
+import SvgSprite from '../SvgSprite';
 import './menudraweritem.css';
 
 interface MenuDrawerItemProps {
@@ -13,7 +14,7 @@ const MenuDrawerItem: React.FC<MenuDrawerItemProps> = (props) => {
     
     return (
         <li className="menu-drawer-item">
-            <img src="" />
+            <SvgSprite icon="close" width={16} />
             <Link to={props.path} >{props.title}</Link>
         </li>
 	)

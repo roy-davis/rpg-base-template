@@ -1,7 +1,8 @@
 import React from "react";
+import SvgSprite from '../SvgSprite';
+
 import './buttons.css';
 
-import LoginIcon from '../../Assets/Images/login-avatar.svg';
 
 
 interface LoginButtonProps {
@@ -14,14 +15,9 @@ const LoginButton: React.FC<LoginButtonProps> = (props) => {
         <button 
             onClick={props.onClick} 
             className="btn login" 
-            role="button"
             aria-label="Login"
         >
-            <img 
-                src={LoginIcon} 
-                alt="Login icon" 
-                className="login icon" 
-            />
+            <SvgSprite icon="avatar" fill="#ffffff" width={20} />
             <span>Login</span>
         </button>
     );
