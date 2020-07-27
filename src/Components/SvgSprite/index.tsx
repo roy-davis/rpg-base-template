@@ -10,7 +10,7 @@ interface SvgSpriteProps {
 };
 
 const SvgSprite: React.FC<SvgSpriteProps> = (props) => {
-    
+
     return (
         <svg 
             fill={props.fill}
