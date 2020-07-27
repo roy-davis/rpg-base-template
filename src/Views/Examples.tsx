@@ -2,10 +2,14 @@ import React from "react";
 import { Link } from 'react-router-dom';
 import { useAuth0 } from '@auth0/auth0-react';
 import { OAuthLogout } from '../Components/OAuthControls';
+import { ViewInterface } from '../Types/ViewAttributes';
 
-const LandingPage: React.FC = () => {
+
+const LandingPage: React.FC<ViewInterface> = (props) => {
 
     const { isAuthenticated, user } = useAuth0();
+
+    props.updateUI({ title: "This page is the landing page." });
     
     return (
         <article className="page">

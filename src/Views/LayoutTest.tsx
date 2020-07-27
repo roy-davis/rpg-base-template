@@ -1,8 +1,11 @@
 import React from "react";
+import { ViewInterface } from '../Types/ViewAttributes';
  
 
-const LayoutTest: React.FC = () => {
+const LayoutTest: React.FC<ViewInterface> = (props) => {
     
+    props.updateUI({ title: "Examples of layout." });
+
     return (
         <article className="page">
             <div className="col-4 sample-block">4 Col</div>
