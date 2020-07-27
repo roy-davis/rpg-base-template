@@ -59,6 +59,13 @@ html, body, #root {
     font-family: var(--text-family);
 }
 
+.sample-block {
+    background-color: var(--grey); 
+    height: 80px; 
+    border-radius: 0.5rem;
+    padding: 1rem;
+  }
+
 @import './reset.css';
 @import './fonts.css';
 @import './layout.css';

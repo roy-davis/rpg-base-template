@@ -12,3 +12,9 @@
     font-size: 1.25rem;
     color: var(--menu-header-highlight);
 }
+
+.appbar.prototype h1 svg { 
+    fill: #5882b1 !important; 
+    margin-right: 0.5rem;
+    top: 0.125rem;
+}

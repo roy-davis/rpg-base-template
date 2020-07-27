@@ -31,9 +31,9 @@ const OAuthLogout: React.FC = () => {
     const { logout } = useAuth0();
 
     return (
-        <a href="#" className="oauth_login" onClick={() => logout()}>
-            <p>Logout</p>
-        </a>
+        <button className="oauth_login" onClick={() => logout()}>
+            <span>Logout</span>
+        </button>
     );
 }
 
@@ -42,10 +42,10 @@ const OAuthRefresh: React.FC = () => {
     const { loginWithRedirect } = useAuth0();
 
     return (
-        <a href="#" className="oauth_refresh" onClick={() => loginWithRedirect()}>
+        <button className="oauth_refresh" onClick={() => loginWithRedirect()}>
             <span>Your token has expired</span>
-            <p>Not yet implemented</p>
-        </a>
+            <span>Not yet implemented</span>
+        </button>
     );
 }
 

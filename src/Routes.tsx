@@ -1,11 +1,10 @@
 import React from 'react';
 import {Switch, Route} from 'react-router-dom';
 
-// Components
+// Components :
 import PrivateRoute from './Components/PrivateRoute';
 import AppBar from './Components/AppBar';
-import MenuDrawer from './Components/MenuDrawer';
-import MenuDrawerItem from './Components/MenuDrawerItem';
+import { MenuDrawer, MenuDrawerItem } from './Components/MenuDrawer';
 
 
 // Views :
@@ -14,12 +13,11 @@ import ProtectedExample from "./Views/ProtectedExample";
 import OAuthLogin from "./Views/OAuthLogin";
 import Examples from "./Views/Examples";
 
-
 function Routes() {
   return (
     <div className="wrap">
-        <main className="content">  
-        <AppBar />        
+        <main className="content"> 
+          <AppBar title="This is a placeholder title." />
           <Switch>
             <Route path={["/"]} component={Examples} exact />
             <Route path={["/layout"]} component={LayoutTest} exact />
@@ -32,6 +30,7 @@ function Routes() {
           <MenuDrawerItem path="/" title="Menu item 2" icon="" />
           <MenuDrawerItem path="/" title="Menu item 3" icon="" />
         </MenuDrawer>
+
     </div>
   );
 }
