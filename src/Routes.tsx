@@ -20,6 +20,7 @@ function Routes() {
   const [pageTitle, setPageTitle] = useState("");
   const [prototypeBanner, setPrototypeBanner] = useState(false);
   const [suppressMenu, setSuppressMenu] = useState("wrap");
+  const [drawerOpen, setDrawerOpen] = useState(false);
 
   const handleUIUpdate = (att: ViewAttributes) => {
     setPageTitle(att.title);
@@ -30,10 +31,20 @@ function Routes() {
 
   const setDocumentheader = () => document.title = appName + " - " + pageTitle;
 
+
+  const handleMenuToggle = (event: React.MouseEvent<HTMLButtonElement | SVGSVGElement | HTMLAnchorElement>) => {
+    setDrawerOpen(!drawerOpen);
+  }
+
+  const handleCloseMenu = (event: React.MouseEvent<HTMLButtonElement | SVGSVGElement | HTMLAnchorElement>) => {
+    setDrawerOpen(false);
+  }
+
+
   return (
     <div className={suppressMenu}>
         <main className="content"> 
-          <AppBar title={pageTitle} prototype={prototypeBanner} />
+          <AppBar title={pageTitle} prototype={prototypeBanner} toggleDrawer={handleMenuToggle} />
           <Switch>
     
             <Route 
@@ -59,11 +70,11 @@ function Routes() {
 
           </Switch>
         </main>
-        <MenuDrawer>
-          <MenuDrawerItem path="/" title="Home" icon="home" />
-          <MenuDrawerItem path="/login" title="Oauth Login" icon="avatar" />
-          <MenuDrawerItem path="/layout" title="Layout Example" icon="tick" />
-          <MenuDrawerItem path="/protected-example" title="Protected Example" icon="close" />
+        <MenuDrawer open={drawerOpen} toggleDrawer={handleMenuToggle}>
+          <MenuDrawerItem path="/" title="Home" icon="home" onClick={handleCloseMenu} />
+          <MenuDrawerItem path="/login" title="Oauth Login" icon="avatar" onClick={handleCloseMenu} />
+          <MenuDrawerItem path="/layout" title="Layout Example" icon="tick" onClick={handleCloseMenu} />
+          <MenuDrawerItem path="/protected-example" title="Protected Example" icon="close" onClick={handleCloseMenu} />
         </MenuDrawer>
     </div>
   );

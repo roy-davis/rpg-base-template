@@ -7,7 +7,7 @@ const LayoutTest: React.FC<ViewInterface> = (props) => {
     props.updateUI({ title: "Examples of layout." });
 
     return (
-        <article className="page">
+        <article className="page flex">
             <div className="col-4 sample-block">4 Col</div>
 
             <div className="col-2 sample-block">2 Col</div>

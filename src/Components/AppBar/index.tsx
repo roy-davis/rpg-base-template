@@ -6,6 +6,7 @@ import './appbar.css';
 interface AppBarProps {
     title: string,
     prototype?: boolean,
+    toggleDrawer: (event: React.MouseEvent<HTMLButtonElement>) => void ,
 };
 
 const AppBar: React.FC<AppBarProps> = (props) => {
@@ -19,7 +20,8 @@ const AppBar: React.FC<AppBarProps> = (props) => {
     } else {
         return (
             <aside className="appbar">
-                <button 
+                <button
+                    onClick={props.toggleDrawer}
                     className="hamburger" 
                     aria-label="Open menu button.">
                         <SvgSprite icon="menu" width={18} />

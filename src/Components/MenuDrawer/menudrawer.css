@@ -5,6 +5,7 @@
     background-color: var(--lic-dark-blue);
     float: left;
     order: 1;
+    transition: all 250ms;
 }
 
 .menu-drawer header {
@@ -114,10 +115,20 @@
     display: none;
   }
 
+@media screen and (min-width: 1000px) {
+    .menu-drawer header svg {
+        display: none;
+    }
+}
 
 @media screen and (max-width: 1000px) {
     .menu-drawer {
-      display: none;
+      position: absolute;
+      left: -20rem;
+    }
+
+    .menu-drawer.open {
+        left: 0rem;
     }
 }
 

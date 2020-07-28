@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
 import SvgSprite from '../SvgSprite';
 import AppLogo from '../../Assets/Images/logo.svg';
@@ -9,12 +9,13 @@ interface MenuDrawerItemProps {
     title: string,
     path: string,
     icon: string,
+    onClick?: (event: React.MouseEvent<HTMLAnchorElement>) => void,
 };
 
 const MenuDrawerItem: React.FC<MenuDrawerItemProps> = (props) => {
     return (
         <li className="menu-drawer-item">
-            <Link to={props.path} >
+            <Link to={props.path} onClick={props.onClick} >
                 <SvgSprite icon={props.icon} width={24} />
                 <h4>{props.title}</h4>
                 <SvgSprite icon="next" width={16} />
@@ -23,16 +24,28 @@ const MenuDrawerItem: React.FC<MenuDrawerItemProps> = (props) => {
 	)
 }
 
-const MenuDrawer: React.FC = (props) => {
+
+interface MenuDrawerProps {
+    open: boolean,
+    toggleDrawer: (event: React.MouseEvent<SVGSVGElement>) => void,
+};
+
+const MenuDrawer: React.FC<MenuDrawerProps> = (props) => {
 
     const { isAuthenticated, user } = useAuth0();
-    console.log(user)
+
+    const [open, setOpen] = useState("");
+
+    useEffect(() => {
+        (props.open) ? setOpen("open") : setOpen("");
+    });
+
     return (
-        <aside className="menu-drawer">
+        <aside className={`menu-drawer ${open}`}>
             <header>
                 <img src={AppLogo} alt="Application Logo" className="auth-logo" />
                 <h1>Application Name</h1>
-                <SvgSprite icon="close" width={18} />
+                <SvgSprite icon="close" width={18} onClick={props.toggleDrawer} />
             </header>
             <ul>
                 {isAuthenticated &&
