@@ -18,16 +18,22 @@ function Routes() {
 
   const appName = "LIC Prototype";
   const [pageTitle, setPageTitle] = useState("");
+  const [prototypeBanner, setPrototypeBanner] = useState(false);
+  const [supressMenu, setSupressMenu] = useState(false);
 
   const handleUIUpdate = (att: ViewAttributes) => {
     setPageTitle(att.title);
-    document.title = appName + " - " + att.title;
+    setDocumentheader();
+    setPrototypeBanner((att.prototype) ? true : false);
+    setSupressMenu((att.suspressMenu) ? true : false);
   }
+
+  const setDocumentheader = () => document.title = appName + " - " + pageTitle;
 
   return (
     <div className="wrap">
         <main className="content"> 
-          <AppBar title={pageTitle} />
+          <AppBar title={pageTitle} prototype={prototypeBanner} />
           <Switch>
     
             <Route 
@@ -47,8 +53,8 @@ function Routes() {
            
             <PrivateRoute 
               path="/protected-example" 
-              component={ProtectedExample}  
-              render={(routeProps) => ( <ProtectedExample {...routeProps} updateUI={handleUIUpdate} /> )} 
+              updateUI={handleUIUpdate}
+              component={ProtectedExample}
               exact />
 
           </Switch>

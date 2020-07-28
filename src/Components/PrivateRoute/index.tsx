@@ -1,11 +1,13 @@
 import * as React from 'react';
 import { Route, Redirect, RouteProps } from 'react-router-dom';
 import { useAuth0 } from "@auth0/auth0-react";
+import { ViewAttributes } from '../../Types/ViewAttributes';
 
 interface PrivateRouteProps extends RouteProps {
-  component?: any;
+  component?: any,
+  updateUI?: (attributes: ViewAttributes) => void,
   // tslint:disable-next-line:no-any
-  children?: any;
+  children?: any,
 }
 
 const PrivateRoute = (props: PrivateRouteProps) => {
@@ -22,7 +24,7 @@ const PrivateRoute = (props: PrivateRouteProps) => {
         render={routeProps =>
             isAuthenticated ? (
                 Component ? (
-                    <Component {...routeProps} />
+                    <Component {...routeProps} updateUI={props.updateUI} />
                 ) : (
                     children
                 )

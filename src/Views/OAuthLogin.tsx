@@ -4,7 +4,11 @@ import { OAuthLogin as OAuthLoginControl } from '../Components/OAuthControls';
 
 const OAuthLogin: React.FC<ViewInterface> = (props) => {
     
-    props.updateUI({ title: "This page is the landing page." });
+    props.updateUI({ 
+        title: "This is an oauth login example.",
+        suspressMenu: true,
+        prototype: true, 
+    });
 
     return (
         <article className="page login">

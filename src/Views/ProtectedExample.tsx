@@ -3,7 +3,7 @@ import { ViewInterface } from '../Types/ViewAttributes';
 
 const ProtectedExample: React.FC<ViewInterface> = (props) => {
     
-    props.updateUI({ title: "This page is the landing page." });
+    props.updateUI({ title: "This is an example of a protected route." });
 
     return (
         <article className="page">
