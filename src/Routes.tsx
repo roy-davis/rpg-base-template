@@ -13,6 +13,7 @@ import LayoutTest from "./Views/LayoutTest";
 import ProtectedExample from "./Views/ProtectedExample";
 import OAuthLogin from "./Views/OAuthLogin";
 import Examples from "./Views/Examples";
+import Http404 from "./Views/Http404";
 
 function Routes() {
 
@@ -67,7 +68,7 @@ function Routes() {
               updateUI={handleUIUpdate}
               component={ProtectedExample}
               exact />
-
+            <Route render={(routeProps) => ( <Http404 {...routeProps} updateUI={handleUIUpdate} /> )}   />
           </Switch>
         </main>
         <MenuDrawer open={drawerOpen} toggleDrawer={handleMenuToggle}>
