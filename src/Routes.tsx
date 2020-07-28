@@ -19,19 +19,19 @@ function Routes() {
   const appName = "LIC Prototype";
   const [pageTitle, setPageTitle] = useState("");
   const [prototypeBanner, setPrototypeBanner] = useState(false);
-  const [supressMenu, setSupressMenu] = useState(false);
+  const [suppressMenu, setSuppressMenu] = useState("wrap");
 
   const handleUIUpdate = (att: ViewAttributes) => {
     setPageTitle(att.title);
     setDocumentheader();
     setPrototypeBanner((att.prototype) ? true : false);
-    setSupressMenu((att.suspressMenu) ? true : false);
+    setSuppressMenu((att.suppressMenu) ? "wrap suppress-menu" : "wrap");
   }
 
   const setDocumentheader = () => document.title = appName + " - " + pageTitle;
 
   return (
-    <div className="wrap">
+    <div className={suppressMenu}>
         <main className="content"> 
           <AppBar title={pageTitle} prototype={prototypeBanner} />
           <Switch>

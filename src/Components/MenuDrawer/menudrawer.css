@@ -55,6 +55,10 @@
     height: 2rem;
 }
 
+.suppress-menu .menu-drawer {
+    display: none;
+  }
+
 
 @media screen and (max-width: 1000px) {
     .menu-drawer {

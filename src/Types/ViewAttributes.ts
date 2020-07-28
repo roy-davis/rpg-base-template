@@ -6,5 +6,5 @@ export interface ViewInterface {
 export type ViewAttributes = {
     title: string;
     prototype?: boolean;
-    suspressMenu?: boolean;
+    suppressMenu?: boolean;
 }

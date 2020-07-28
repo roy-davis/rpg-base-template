@@ -6,7 +6,7 @@ const OAuthLogin: React.FC<ViewInterface> = (props) => {
     
     props.updateUI({ 
         title: "This is an oauth login example.",
-        suspressMenu: true,
+        suppressMenu: true,
         prototype: true, 
     });
 

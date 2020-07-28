@@ -9,7 +9,7 @@ interface AppBarProps {
 };
 
 const AppBar: React.FC<AppBarProps> = (props) => {
-    
+
     if (props.prototype) {
         return (
             <aside className="appbar prototype">
