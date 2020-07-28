@@ -27,7 +27,7 @@ const MenuDrawerItem: React.FC<MenuDrawerItemProps> = (props) => {
 
 interface MenuDrawerProps {
     open: boolean,
-    toggleDrawer: (event: React.MouseEvent<SVGSVGElement>) => void,
+    toggleDrawer: (event: React.MouseEvent<HTMLElement>) => void,
 };
 
 const MenuDrawer: React.FC<MenuDrawerProps> = (props) => {
@@ -41,40 +41,43 @@ const MenuDrawer: React.FC<MenuDrawerProps> = (props) => {
     });
 
     return (
-        <aside className={`menu-drawer ${open}`}>
-            <header>
-                <img src={AppLogo} alt="Application Logo" className="auth-logo" />
-                <h1>Application Name</h1>
-                <SvgSprite icon="close" width={18} onClick={props.toggleDrawer} />
-            </header>
-            <ul>
-                {isAuthenticated &&
-                    <li className="profile">
-                        <a href="/profile">
-                            <div>
-                                <SvgSprite icon="avatar" width={32} />
-                            </div>
-                            <h4>
-                                <span>{user.name}</span>
-                                <span>{user.email}</span>
-                            </h4>
-                            <div>
-                                <SvgSprite icon="next" width={16}/>
-                            </div>
-                        </a>
-                    </li>
-                }
-                { props.children }
-                {isAuthenticated &&
-                    <li className="menu-drawer-item">
-                        <a href="/logout">
-                            <SvgSprite icon="logout" width={24} />
-                            <h4>Logout</h4>
-                        </a>
-                    </li>
-                }
-            </ul>
-        </aside>
+        <>
+            <div className={`menu-drawer-curtain ${open}`}  onClick={props.toggleDrawer} ></div>
+            <aside className={`menu-drawer ${open}`}>
+                <header onClick={props.toggleDrawer} >
+                    <img src={AppLogo} alt="Application Logo" className="auth-logo" />
+                    <h1>Application Name</h1>
+                    <SvgSprite icon="close" width={18} />
+                </header>
+                <ul>
+                    {isAuthenticated &&
+                        <li className="profile">
+                            <a href="/profile">
+                                <div>
+                                    <SvgSprite icon="avatar" width={32} />
+                                </div>
+                                <h4>
+                                    <span>{user.name}</span>
+                                    <span>{user.email}</span>
+                                </h4>
+                                <div>
+                                    <SvgSprite icon="next" width={16}/>
+                                </div>
+                            </a>
+                        </li>
+                    }
+                    { props.children }
+                    {isAuthenticated &&
+                        <li className="menu-drawer-item">
+                            <a href="/logout">
+                                <SvgSprite icon="logout" width={24} />
+                                <h4>Logout</h4>
+                            </a>
+                        </li>
+                    }
+                </ul>
+            </aside>
+        </>
 	)
 }
 

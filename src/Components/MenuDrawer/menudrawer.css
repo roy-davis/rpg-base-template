@@ -113,22 +113,43 @@
 
 .suppress-menu .menu-drawer {
     display: none;
-  }
+}
+
+.menu-drawer-curtain {
+    background-color: var(--black);
+    opacity: 0.3;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    transition: all 250ms;
+}
 
 @media screen and (min-width: 1000px) {
     .menu-drawer header svg {
         display: none;
     }
+    .menu-drawer-curtain {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 1000px) {
+    .menu-drawer-curtain.open {
+        display: block;
+        z-index: initial;
+    }
     .menu-drawer {
       position: absolute;
       left: -20rem;
+
     }
 
     .menu-drawer.open {
         left: 0rem;
+        box-shadow: 0.25rem 0 0.25rem 0 rgba(0, 0, 0, 0.2);
     }
 }
 
