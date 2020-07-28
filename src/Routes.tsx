@@ -60,9 +60,10 @@ function Routes() {
           </Switch>
         </main>
         <MenuDrawer>
-          <MenuDrawerItem path="/" title="Home" icon="" />
-          <MenuDrawerItem path="/" title="Menu item 2" icon="" />
-          <MenuDrawerItem path="/" title="Menu item 3" icon="" />
+          <MenuDrawerItem path="/" title="Home" icon="home" />
+          <MenuDrawerItem path="/login" title="Oauth Login" icon="avatar" />
+          <MenuDrawerItem path="/layout" title="Layout Example" icon="tick" />
+          <MenuDrawerItem path="/protected-example" title="Protected Example" icon="close" />
         </MenuDrawer>
     </div>
   );

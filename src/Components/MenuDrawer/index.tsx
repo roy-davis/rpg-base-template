@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import SvgSprite from '../SvgSprite';
 import AppLogo from '../../Assets/Images/logo.svg';
 import './menudrawer.css';
+import { useAuth0 } from "@auth0/auth0-react";
 
 interface MenuDrawerItemProps {
     title: string,
@@ -13,17 +14,19 @@ interface MenuDrawerItemProps {
 const MenuDrawerItem: React.FC<MenuDrawerItemProps> = (props) => {
     return (
         <li className="menu-drawer-item">
-            <SvgSprite icon="close" width={16} />
-            <Link to={props.path} >{props.title}</Link>
-            <div className="menu-item-next">
+            <Link to={props.path} >
+                <SvgSprite icon={props.icon} width={24} />
+                <h4>{props.title}</h4>
                 <SvgSprite icon="next" width={16} />
-            </div>
+            </Link>
         </li>
 	)
 }
 
 const MenuDrawer: React.FC = (props) => {
 
+    const { isAuthenticated, user } = useAuth0();
+    console.log(user)
     return (
         <aside className="menu-drawer">
             <header>
@@ -32,9 +35,31 @@ const MenuDrawer: React.FC = (props) => {
                 <SvgSprite icon="close" width={18} />
             </header>
             <ul>
-                <li className="profile">User name</li>
+                {isAuthenticated &&
+                    <li className="profile">
+                        <a href="/profile">
+                            <div>
+                                <SvgSprite icon="avatar" width={32} />
+                            </div>
+                            <h4>
+                                <span>{user.name}</span>
+                                <span>{user.email}</span>
+                            </h4>
+                            <div>
+                                <SvgSprite icon="next" width={16}/>
+                            </div>
+                        </a>
+                    </li>
+                }
                 { props.children }
-                <li><a href="#">Log out</a></li>
+                {isAuthenticated &&
+                    <li className="menu-drawer-item">
+                        <a href="/logout">
+                            <SvgSprite icon="logout" width={24} />
+                            <h4>Logout</h4>
+                        </a>
+                    </li>
+                }
             </ul>
         </aside>
 	)

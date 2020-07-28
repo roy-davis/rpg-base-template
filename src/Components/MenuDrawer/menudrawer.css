@@ -9,17 +9,28 @@
 
 .menu-drawer header {
     background-color: var(--menu-header);
-    height: 5rem;
-    padding: 1rem;
-    display: flex;
-    justify-content: flex-start;
-    align-content: center;
-    align-items: center;
     border-bottom: solid thin var(--black);
+    height: 5rem;
+    display: grid;
+    grid-template-columns: 5rem 1fr 2rem;
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
 }
 
 .menu-drawer header img {
     height: 3rem;
+    width: 3rem;
+    margin: 1rem;
+}
+
+.menu-drawer header h1 {
+    line-height: 5rem;
+    color: var(--white);
+}
+
+.menu-drawer header svg {
+    margin-top: 1.75rem;
 }
 
 .menu-drawer header button {
@@ -33,26 +44,70 @@
 .menu-drawer li {
     height: 3.5rem;
     border-bottom: solid thin var(--blue-dark);
-    padding: 1rem;
     color: var(--white);
-    font-size: 1.25rem;
+    font-size: 1rem;
 }
+
+.menu-drawer li:hover {
+    background-color: var(--blue-dark);
+}
+
 .menu-drawer li a {
     text-decoration: none;
     color: var(--white);
+    display: grid;
+    grid-template-columns: 3.5rem 1fr 2rem;
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
 }
+
+.menu-drawer li a > .icon:first-child { grid-area: 1 / 1 / 2 / 2; margin: 1rem; }
+.menu-drawer li a h4 { grid-area: 1 / 2 / 2 / 3; line-height: 3.5rem; }
+.menu-drawer li a >  .icon:last-child  { grid-area: 1 / 3 / 2 / 4; margin-top: 1rem; }
+
+.menu-drawer-item svg { opacity: 50%; }
+
 .menu-drawer li.profile {
     height: 3.5rem;
     background-color: var(--blue-dark);
     border-bottom: solid thin var(--black);
 }
 
-.menu-item-next {
+.menu-drawer li.profile a {
+    grid-template-columns: 3.5rem 1fr 2.5rem;
+}
+
+.menu-drawer li.profile div {
     border-radius: 50%;
-    padding: 0.25rem;
-    background-color: var(--blue-dark);
+    background-color: var(--black);
     width: 2rem;
     height: 2rem;
+}
+
+.menu-drawer li.profile h4 {
+    padding-top: 0.5rem;
+}
+.menu-drawer li.profile span {
+    display: block;
+    line-height: 1.25rem;
+}
+
+.menu-drawer li.profile span + span {
+    opacity: 50%;
+    font-size: 80%;
+}
+
+.menu-drawer li.profile div:first-child {
+    margin: 0.75rem;
+}
+
+.menu-drawer li.profile div:last-child {
+    width: 1.75rem;
+    height: 1.75rem;
+    padding: 0.35rem 0.35rem 0.35rem 0.45rem;
+    margin-top: 0.75rem;
+    margin-right: 0.75rem;
 }
 
 .suppress-menu .menu-drawer {
@@ -65,3 +120,5 @@
       display: none;
     }
 }
+
+
