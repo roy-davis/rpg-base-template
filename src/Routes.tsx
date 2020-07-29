@@ -7,7 +7,6 @@ import PrivateRoute from './Components/PrivateRoute';
 import AppBar from './Components/AppBar';
 import { MenuDrawer, MenuDrawerItem } from './Components/MenuDrawer';
 
-
 // Views :
 import LayoutTest from "./Views/LayoutTest";
 import ProtectedExample from "./Views/ProtectedExample";
@@ -32,7 +31,6 @@ function Routes() {
 
   const setDocumentheader = () => document.title = appName + " - " + pageTitle;
 
-
   const handleMenuToggle = (event: React.MouseEvent<HTMLButtonElement | SVGSVGElement | HTMLAnchorElement | HTMLElement>) => {
     setDrawerOpen(!drawerOpen);
   }
@@ -40,7 +38,6 @@ function Routes() {
   const handleCloseMenu = (event: React.MouseEvent<HTMLButtonElement | SVGSVGElement | HTMLAnchorElement | HTMLElement>) => {
     setDrawerOpen(false);
   }
-
 
   return (
     <div className={suppressMenu}>

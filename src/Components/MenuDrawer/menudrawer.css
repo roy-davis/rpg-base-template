@@ -115,17 +115,10 @@
     display: none;
 }
 
-.menu-drawer-curtain {
-    background-color: var(--black);
-    opacity: 0.3;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: -1;
-    transition: all 250ms;
+.logout-curtain {
+    display: none;
 }
+
 
 @media screen and (min-width: 1000px) {
     .menu-drawer header svg {
@@ -141,6 +134,7 @@
         display: block;
         z-index: initial;
     }
+    
     .menu-drawer {
       position: absolute;
       left: -20rem;

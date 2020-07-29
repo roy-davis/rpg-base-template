@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
 import SvgSprite from '../SvgSprite';
+import { Modal } from '../Modal';
 import AppLogo from '../../Assets/Images/logo.svg';
 import './menudrawer.css';
 import { useAuth0 } from "@auth0/auth0-react";
@@ -35,14 +36,21 @@ const MenuDrawer: React.FC<MenuDrawerProps> = (props) => {
     const { isAuthenticated, user } = useAuth0();
 
     const [open, setOpen] = useState("");
+    const [showLogout, setShowLogout] = useState(false);
 
     useEffect(() => {
         (props.open) ? setOpen("open") : setOpen("");
     });
 
+    const logoutHandler = (event: React.MouseEvent) => {
+        event.preventDefault();
+        setShowLogout(!showLogout);
+    }
+    
+
     return (
         <>
-            <div className={`menu-drawer-curtain ${open}`}  onClick={props.toggleDrawer} ></div>
+            <div className={`menu-drawer-curtain curtain ${open}`}  onClick={props.toggleDrawer} ></div>
             <aside className={`menu-drawer ${open}`}>
                 <header onClick={props.toggleDrawer} >
                     <img src={AppLogo} alt="Application Logo" className="auth-logo" />
@@ -68,7 +76,7 @@ const MenuDrawer: React.FC<MenuDrawerProps> = (props) => {
                     }
                     { props.children }
                     {isAuthenticated &&
-                        <li className="menu-drawer-item">
+                        <li className="menu-drawer-item" onClick={logoutHandler}>
                             <a href="/logout">
                                 <SvgSprite icon="logout" width={24} />
                                 <h4>Logout</h4>
@@ -77,6 +85,16 @@ const MenuDrawer: React.FC<MenuDrawerProps> = (props) => {
                     }
                 </ul>
             </aside>
+            
+            {showLogout &&
+                <Modal onDismiss={logoutHandler} className="login" >
+                    <header>Are you sure you want to logout?</header>
+                    <div>
+                        <button onClick={logoutHandler}>Close</button>
+                    </div>
+                    <footer></footer>
+                </Modal>
+            }
         </>
 	)
 }

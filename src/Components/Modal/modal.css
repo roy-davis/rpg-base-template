@@ -1,0 +1,31 @@
+#modal-portal,
+.modal-container {
+    position: absolute; 
+    top: 0;
+    left: 0;
+}
+
+.modal-container { 
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    align-content: center;
+}
+
+.modal {
+    padding: 1rem;
+    border-radius: 0.25rem;
+    background-color: var(--white);
+    box-shadow: 0.25rem 0.25rem 0.25rem 0 rgba(0, 0, 0, 0.2);
+    margin: 4rem 1rem;
+    min-width: 15rem;
+}
+
+.modal .icon-close {
+    fill: var(--grey);
+    float: right;
+    z-index: 99;
+}
