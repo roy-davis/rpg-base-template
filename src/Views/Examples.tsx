@@ -9,7 +9,7 @@ const LandingPage: React.FC<ViewInterface> = (props) => {
 
     const { isAuthenticated, user } = useAuth0();
 
-    props.updateUI({ title: "This page is the landing page." });
+    props.updateUI({ title: "Welcome" });
     
     return (
         <article className="page">

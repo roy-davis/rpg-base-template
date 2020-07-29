@@ -31,11 +31,11 @@ function Routes() {
 
   const setDocumentheader = () => document.title = appName + " - " + pageTitle;
 
-  const handleMenuToggle = (event: React.MouseEvent<HTMLButtonElement | SVGSVGElement | HTMLAnchorElement | HTMLElement>) => {
+  const handleMenuToggle = (event: React.MouseEvent) => {
     setDrawerOpen(!drawerOpen);
   }
 
-  const handleCloseMenu = (event: React.MouseEvent<HTMLButtonElement | SVGSVGElement | HTMLAnchorElement | HTMLElement>) => {
+  const handleCloseMenu = (event: React.MouseEvent) => {
     setDrawerOpen(false);
   }
 

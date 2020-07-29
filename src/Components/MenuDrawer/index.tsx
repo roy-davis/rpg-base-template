@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
 import SvgSprite from '../SvgSprite';
 import { Modal } from '../Modal';
+import { OAuthLogout } from '../OAuthControls';
+import { CancelButton } from '../Buttons';
 import AppLogo from '../../Assets/Images/logo.svg';
 import './menudrawer.css';
 import { useAuth0 } from "@auth0/auth0-react";
@@ -90,9 +92,12 @@ const MenuDrawer: React.FC<MenuDrawerProps> = (props) => {
                 <Modal onDismiss={logoutHandler} className="login" >
                     <header>Are you sure you want to logout?</header>
                     <div>
-                        <button onClick={logoutHandler}>Close</button>
+                        
                     </div>
-                    <footer></footer>
+                    <footer>
+                        <CancelButton  onClick={logoutHandler} />
+                        <OAuthLogout />
+                    </footer>
                 </Modal>
             }
         </>

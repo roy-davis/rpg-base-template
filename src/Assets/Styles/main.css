@@ -38,6 +38,10 @@
     --btn-prompt-text: #FFFFFF;
     --btn-prompt-border: #000000;
 
+    --btn-cancel: #edf3fa;
+    --btn-cancel-text: #0095D5;
+    --btn-cancel-border: #edf3fa;
+
     /* Fonts */
     --text-colour: #000000;
     --text-grey: #666666;

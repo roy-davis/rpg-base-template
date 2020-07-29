@@ -3,6 +3,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import './oauth.css';
 import AppLogo from '../../Assets/Images/logo.svg';
 import { LoginButton } from '../Buttons';
+import SvgSprite from '../SvgSprite';
 
 const OAuthLogin: React.FC = () => {
 
@@ -31,9 +32,12 @@ const OAuthLogout: React.FC = () => {
     const { logout } = useAuth0();
 
     return (
-        <button className="oauth_login" onClick={() => logout()}>
+        <button onClick={() => logout()}
+            className="btn logout" 
+            aria-label="Logout" >
             <span>Logout</span>
         </button>
+
     );
 }
 
