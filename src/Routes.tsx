@@ -13,6 +13,7 @@ import ProtectedExample from "./Views/ProtectedExample";
 import OAuthLogin from "./Views/OAuthLogin";
 import Examples from "./Views/Examples";
 import Http404 from "./Views/Http404";
+import ReduxTest from "./Views/ReduxTest";
 
 function Routes() {
 
@@ -58,6 +59,11 @@ function Routes() {
             <Route 
               path={["/login"]} 
               render={(routeProps) => ( <OAuthLogin {...routeProps} updateUI={handleUIUpdate} /> )} 
+              exact />
+
+            <Route 
+              path={["/redux"]} 
+              render={(routeProps) => ( <ReduxTest {...routeProps} updateUI={handleUIUpdate} /> )} 
               exact />
            
             <PrivateRoute 
