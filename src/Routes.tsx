@@ -13,6 +13,7 @@ import ProtectedExample from "./Views/ProtectedExample";
 import OAuthLogin from "./Views/OAuthLogin";
 import Examples from "./Views/Examples";
 import Http404 from "./Views/Http404";
+import Profile from "./Views/Profile";
 
 function Routes() {
 
@@ -29,7 +30,7 @@ function Routes() {
     setSuppressMenu((att.suppressMenu) ? "wrap suppress-menu" : "wrap");
   }
 
-  const setDocumentheader = () => document.title = appName + " - " + pageTitle;
+  const setDocumentheader = () => document.title = appName + " | " + pageTitle;
 
   const handleMenuToggle = (event: React.MouseEvent) => {
     setDrawerOpen(!drawerOpen);
@@ -65,6 +66,13 @@ function Routes() {
               updateUI={handleUIUpdate}
               component={ProtectedExample}
               exact />
+
+            <PrivateRoute 
+              path="/profile" 
+              updateUI={handleUIUpdate}
+              component={Profile}
+              exact />
+
             <Route render={(routeProps) => ( <Http404 {...routeProps} updateUI={handleUIUpdate} /> )}   />
           </Switch>
         </main>

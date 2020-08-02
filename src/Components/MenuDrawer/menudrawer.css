@@ -6,6 +6,7 @@
     float: left;
     order: 1;
     transition: all 250ms;
+    z-index: 500;
 }
 
 .menu-drawer header {

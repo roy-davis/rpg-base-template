@@ -2,10 +2,9 @@ import React from "react";
 import { useAuth0 } from '@auth0/auth0-react';
 import { OAuthLogout } from '../Components/OAuthControls';
 import { ViewInterface } from '../Types/ViewAttributes';
-import { Offline, Online } from "react-detect-offline";
 
 
-const LandingPage: React.FC<ViewInterface> = (props) => {
+const Profile: React.FC<ViewInterface> = (props) => {
 
     const { isAuthenticated, user } = useAuth0();
 
@@ -13,10 +12,7 @@ const LandingPage: React.FC<ViewInterface> = (props) => {
     
     return (
         <article className="page">
-            <Online>Only shown when you're online</Online>
-            <Offline>Only shown offline (surprise!)</Offline>
-
-            
+  
             {isAuthenticated &&
                 <>
                     <h1>You are logged in as: {user.name} </h1>
@@ -32,4 +28,4 @@ const LandingPage: React.FC<ViewInterface> = (props) => {
 }
 
 
-export default LandingPage;
+export default Profile;
