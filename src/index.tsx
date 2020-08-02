@@ -5,8 +5,12 @@ import {BrowserRouter as Router} from 'react-router-dom';
 import * as serviceWorker from './serviceWorker';
 import { Auth0Provider } from "@auth0/auth0-react";
 import './Assets/Styles/main.css';
+import { createStore, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux';
+import store from './Redux/Store/store'
 
 ReactDOM.render(
+  <Provider store={store}>
   <Auth0Provider
     domain="virtualfarm.au.auth0.com"
     clientId="h7cl0U73pFw0Pcmsw1ju3IEd3jraWgna"
@@ -17,7 +21,8 @@ ReactDOM.render(
         <Routes />
       </Router>
     </React.StrictMode>
-  </Auth0Provider>,
+  </Auth0Provider>
+  </Provider>,
   document.getElementById('root')
 );
 

@@ -2,7 +2,7 @@ import React from "react";
 import { useAuth0 } from '@auth0/auth0-react';
 import { OAuthLogout } from '../Components/OAuthControls';
 import { ViewInterface } from '../Types/ViewAttributes';
-import { Offline, Online } from "react-detect-offline";
+
 
 
 const LandingPage: React.FC<ViewInterface> = (props) => {
@@ -13,8 +13,6 @@ const LandingPage: React.FC<ViewInterface> = (props) => {
     
     return (
         <article className="page">
-            <Online>Only shown when you're online</Online>
-            <Offline>Only shown offline (surprise!)</Offline>
 
             
             {isAuthenticated &&
