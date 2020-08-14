@@ -40,6 +40,21 @@
   width: 100vw !important;  
 }
 
+
+.switch-wrapper {
+  position: relative;
+}
+
+.switch-wrapper > div {
+  position: absolute;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 3.5em calc(100% - 3.5em);
+  grid-template-areas: "appbar" "page";
+  height: 100%;
+}
+
+
 @media screen and (min-width: 768px)  {
   .wrap {
     width: 840px; 

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import {Switch, Route} from 'react-router-dom';
+import { Route } from 'react-router-dom';
+
 import { ViewAttributes } from './Types/ViewAttributes';
 
 // Components :
@@ -14,6 +15,10 @@ import OAuthLogin from "./Views/OAuthLogin";
 import Examples from "./Views/Examples";
 import Http404 from "./Views/Http404";
 import ReduxTest from "./Views/ReduxTest";
+
+
+declare function require(moduleName: string): any;
+const AnimatedSwitch = require('react-router-transition').AnimatedSwitch;
 
 function Routes() {
 
@@ -44,7 +49,12 @@ function Routes() {
     <div className={suppressMenu}>
         <main className="content"> 
           <AppBar title={pageTitle} prototype={prototypeBanner} toggleDrawer={handleMenuToggle} />
-          <Switch>
+            <AnimatedSwitch
+              atEnter={{ opacity: 0 }}
+              atLeave={{ opacity: 0 }}
+              atActive={{ opacity: 1 }}
+              className="switch-wrapper"
+            >
     
             <Route 
               path={["/"]} 
@@ -72,7 +82,7 @@ function Routes() {
               component={ProtectedExample}
               exact />
             <Route render={(routeProps) => ( <Http404 {...routeProps} updateUI={handleUIUpdate} /> )}   />
-          </Switch>
+            </AnimatedSwitch>
         </main>
         <MenuDrawer open={drawerOpen} toggleDrawer={handleMenuToggle}>
           <MenuDrawerItem path="/" title="Home" icon="home" onClick={handleCloseMenu} />
