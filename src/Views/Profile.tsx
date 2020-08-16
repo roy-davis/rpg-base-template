@@ -4,8 +4,7 @@ import { OAuthLogout } from '../Components/OAuthControls';
 import { ViewInterface } from '../Types/ViewAttributes';
 
 
-
-const LandingPage: React.FC<ViewInterface> = (props) => {
+const Profile: React.FC<ViewInterface> = (props) => {
 
     const { isAuthenticated, user } = useAuth0();
 
@@ -13,8 +12,7 @@ const LandingPage: React.FC<ViewInterface> = (props) => {
     
     return (
         <article className="page">
-
-            
+  
             {isAuthenticated &&
                 <>
                     <h1>You are logged in as: {user.name} </h1>
@@ -30,4 +28,4 @@ const LandingPage: React.FC<ViewInterface> = (props) => {
 }
 
 
-export default LandingPage;
+export default Profile;
