@@ -21,7 +21,6 @@
     overflow: hidden;
     display: flex;
     align-items: center;
-    display: none;
 }
 
 .hamburger:hover {
@@ -59,7 +58,3 @@
     top: 0.125rem;
 }
 
-
-@media screen and (min-width: 320px) and (max-width: 1000px) {
-    .hamburger { display: inline-block;}
-}

@@ -11,7 +11,7 @@
 }
 
 .content {
-  height: calc(100% - 3.5rem);
+  height: inherit;
   background-color:var(--white);
   order: 2;
 }
@@ -41,8 +41,6 @@
   width: 100vw !important;  
 }
 
-
-<<<<<<< HEAD
 .switch-wrapper {
   position: relative;
 }
@@ -56,8 +54,6 @@
   height: 100%;
 }
 
-=======
->>>>>>> ce7732c87dba27fb41d96243fad8fdbb70d6bbe4
 
 @media screen and (min-width: 768px)  {
   .wrap {
